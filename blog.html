@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+.page-header{
+  background-image: url(b1.jpg);
+  background-size: cover;
+  width:100%;
+  height:40vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+}
+.page-header h2{
+  color:#fff;
+}
+.page-header p{
+  color:rosybrown;
+}
+#pagination{
+  text-align: center;
+}
+#pagination a{
+  text-decoration: none;
+  padding:15px 20px;
+background-color:#088178;
+border-radius: 4px;
+color:#fff;
+font-weight: 600;
+}
+#pagination a{
+  font-size: 16px;
+  font-weight: 600;
+}
+/* Container styling */
+#blog {
+  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 40px;
+  gap: 30px; /* Space between image and text */
+}
+
+/* Image styling */
+.blog-img {
+  width: 50%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.blog-img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover; /* Ensures image doesn't stretch */
+  transition: transform 0.3s ease;
+}
+
+/* Text & Details */
+.blog-details {
+  width: 50%;
+}
+
+.blog-details h2 {
+  font-size: 28px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.blog-details p {
+  font-size: 15px;
+  color: #777;
+  line-height: 1.6;
+}
+
+/* "Read More" link styling */
+.blog-details a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+  position: relative;
+  transition: 0.3s;
+}
+
+.blog-details a::after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background-color: #088178; /* Branding color */
+  position: absolute;
+  top: 10px;
+  right: -60px;
+}
+
+.blog-details a:hover {
+  color: #088178;
+}
+
+/* Date/Number Styling */
+#blog h2:last-child {
+  font-size: 70px;
+  font-weight: 900;
+  color: #f0f0f0; /* Large background-style text */
+  position: absolute;
+  z-index: -1;
+}
+
+/* Hover Effect */
+.blog-box:hover .blog-img img {
+  transform: scale(1.05);
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="practice.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Mysha</title>
+</head>
+<body>
+<section id="head">
+  <div class="logo-m"><img src="logo.png"alt=""></div>
+<div class="text">
+    <ul id="navbar">
+      <li id="lg-bag"><a href="cart.html">
+      <a href="#" id="close"><i class="fas fa-times"></i></a>
+      <li><a href="index.html">Home</a></li>
+      <li><a  href="shop.html">Shop</a></li>
+      <li><a class="active" href="blog.html">Blog</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <i class="fa-solid fa-bag-shopping"></i></a></li>
+    </ul>
+  </div>
+
+  <div id="mobile">
+    <i id="bar" class="fas fa-outdent"></i>
+  </div>
+</section>
+<section class="page-header">
+   <h2 style="font-size:45px">Shop stay</h2>
+<p> save more with copons & save 70%</p>
+</section>
+</section>
+<section id="blog">
+<div class="blog-box">
+<div class="blog-img"><img src="b1.jpg" alt=""></div>
+<div class="blog-details"><h2>the cotton</h2>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+Voluptatum facilis adipisci voluptate.</p>
+<a href="">read more__</a></div>
+</div>
+<h2>13/01</h2>
+<div class="blog-box">
+<div class="blog-img"><img src="b1.jpg" alt=""></div>
+<div class="blog-details"><h2>the cotton</h2>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+Voluptatum facilis adipisci voluptate.</p>
+<a href="">read more__</a></div>
+</div>
+<h2>13/01</h2>
+<div class="blog-box">
+<div class="blog-img"><img src="b1.jpg" alt=""></div>
+<div class="blog-details"><h2>the cotton</h2>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+Voluptatum facilis adipisci voluptate.</p>
+<a href="">read more__</a></div>
+</div>
+<h2>13/01</h2>
+<div class="blog-box">
+<div class="blog-img"><img src="b1.jpg" alt=""></div>
+<div class="blog-details"><h2>the cotton</h2>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+Voluptatum facilis adipisci voluptate.</p>
+<a href="">read more__</a></div>
+</div>
+<h2>13/01</h2>
+<div class="blog-box">
+<div class="blog-img"><img src="b1.jpg" alt=""></div>
+<div class="blog-details"><h2>the cotton</h2>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+Voluptatum facilis adipisci voluptate.</p>
+<a href="">read more__</a></div>
+</div>
+<h2>13/01</h2>
+</section>,write css for this blog
+<section id="pagination" class="section-p1">
+  <a href="#">1</a>
+  <a href="#">2</a>
+  <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+
+</section>
+<section id="newslatter" class="section-p1">
+  <div class="newstext">
+    <h4>sign in for newslatter</h4>
+    <p>get -email-address</p>
+  </div>
+  <div class="form"><input type="text" placeholder="your -email-address">
+  <button class="normal">Sign-up</button></div>
+</section>
+<footer class="section-p1">
+  <div class="col">
+    <img src="" alt="">
+    <h4>contact us</h4>
+    <p><strong>Adresss:</strong>boirag</p>
+    <p><strong>Phone:</strong>013154393838</p>
+    <p><strong>facebook:</strong>md blabla</p>
+    <div class="social">
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-youtube"></i>
+    </div>
+  </div>
+  <div class="col"><h4>about us</h4>
+    <a href="#">about us</a>
+    <a href="#">Delivery information</a>
+    <a href="#">privacy policy</a>
+    <a href="#">terms and condition </a>
+    <a href="#">contact us</a>
+  </div>
+  <div class="col"><h4>accout</h4>
+    <a href="#">about us</a>
+    <a href="#">Delivery information</a>
+    <a href="#">privacy policy</a>
+    <a href="#">terms and condition </a>
+    <a href="#">contact us</a>
+  </div>
+  <div class="col-install">
+    <h2>install app</h2>
+    <div class="row">
+      <img src="app.jpg" alt="">
+      <img src="play.jpg" alt="">
+      <h4>secure pament get way</h4>
+      <img src="pay.png" alt="">
+    </div>
+  </div>
+</footer>
+ <script src="practice.js"></script>
+</body>
+</html>

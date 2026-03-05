@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+#prodetails {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#prodetails .single-pro-image {
+  width: 40%;
+}
+
+#prodetails .small-img-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.small-img-col {
+  flex-basis: 24%; /* Fits 4 images perfectly with small gaps */
+  cursor: pointer;
+}
+
+#prodetails .single-pro-details {
+  width: 50%;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column; /* Stacks text/buttons vertically */
+}
+
+.single-pro-details h4 {
+  padding: 20px 0 10px 0;
+}
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #25D366; /* Official WhatsApp Green */
+  color: #ffffff;            /* White text */
+  padding: 12px 24px;
+  border-radius: 10px;        /* Rounded corners */
+  text-decoration: none;     /* Removes the underline */
+  font-family: sans-serif;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+/* Size and spacing for the logo */
+.whatsapp-button img {
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+}
+
+/* Darkens slightly when you hover over it */
+.whatsapp-button:hover {
+  background-color: #1ebe57;
+}
+
+.single-pro-details select {
+  display: block;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 120px;
+}
+
+.single-pro-details input {
+  width: 50px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+</style>
+  <link rel="stylesheet" href="practice.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Mysha</title>
+</head>
+<body>
+<section id="head">
+  <div class="logo-m"><img src="logo.png"alt=""></div>
+<div class="text">
+    <ul id="navbar">
+      <li id="lg-bag"><a href="cart.html">
+      <a href="#" id="close"><i class="fas fa-times"></i></a>
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="shop.html">Shop</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <i class="fa-solid fa-bag-shopping"></i></a></li>
+    </ul>
+  </div>
+
+  <div id="mobile">
+    <i id="bar" class="fas fa-outdent"></i>
+  </div>
+</section>
+<section id="prodetails" class="section-p1">
+  <div class="single-pro-image">
+    <img src="f1.jpg" width="100%" id="MainImg" alt="Main Product Image">
+
+    <div class="small-img-group">
+      <div class="small-img-col">
+        <img src="f1.jpg" width="100%" class="small-img" alt="">
+      </div>
+      <div class="small-img-col">
+        <img src="f2.jpg" width="100%" class="small-img" alt="">
+      </div>
+      <div class="small-img-col">
+        <img src="f3.jpg" width="100%" class="small-img" alt="">
+      </div>
+      <div class="small-img-col">
+        <img src="f4.jpg" width="100%" class="small-img" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="single-pro-details">
+    <h6>Home / T-Shirt</h6>
+    <h4>Men's Fashion T-Shirt</h4>
+    <h2>$23.00</h2>
+    
+    <select>
+      <option>Select Size</option>
+      <option>XL</option>
+      <option>M</option>
+      <option>L</option>
+      <option>XXL</option>
+    </select>
+
+    <div class="cart-action">
+      <input type="number" value="1">
+      <button class="normal" onclick="orderWhatsApp()">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20">
+  Order on WhatsApp
+</button>
+    </div>
+<h4>Product Details</h4>
+    <p>This premium cotton T-shirt offers a relaxed fit and durable stitching, perfect for everyday fashion.</p>
+  </div>
+</section>
+<section id="products" class="section-p1">
+  <h1>New Arrivals</h1>
+  <p>Summer Cddjfjdfj</p>
+  
+  <div class="container">
+    <div class="pro">
+      <img src="n1.jpg" alt="Carton T-shirt">
+      
+      <div class="des">
+        <span>adidas</span>
+        <h5>Carton T-shirt</h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>$500</h4>
+      </div>
+      
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+    <div class="pro">
+      <img src="n2.jpg" alt="Carton T-shirt">
+      
+      <div class="des">
+        <span>adidas</span>
+        <h5>Carton T-shirt</h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>$500</h4>
+      </div>
+      
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+    <div class="pro">
+      <img src="n3.jpg" alt="Carton T-shirt">
+      
+      <div class="des">
+        <span>adidas</span>
+        <h5>Carton T-shirt</h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>$500</h4>
+      </div>
+      
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+    <div class="pro">
+      <img src="n4.jpg" alt="Carton T-shirt">
+      
+      <div class="des">
+        <span>adidas</span>
+        <h5>Carton T-shirt</h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>$500</h4>
+      </div>
+      
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+    <div class="pro">
+      <img src="n5.jpg" alt="Carton T-shirt">
+      
+      <div class="des">
+        <span>adidas</span>
+        <h5>Carton T-shirt</h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>$500</h4>
+      </div>
+      
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+    <div class="pro">
+      <img src="n6.jpg" alt="Carton T-shirt">
+      
+      <div class="des">
+        <span>adidas</span>
+        <h5>Carton T-shirt</h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>$500</h4>
+      </div>
+      
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+    <div class="pro">
+      <img src="n7.jpg" alt="Carton T-shirt">
+      
+      <div class="des">
+        <span>adidas</span>
+        <h5>Carton T-shirt</h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>$500</h4>
+      </div>
+      
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+    <div class="pro">
+      <img src="n8.jpg" alt="Carton T-shirt">
+      
+      <div class="des">
+        <span>adidas</span>
+        <h5>Carton T-shirt</h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>$500</h4>
+      </div>
+      
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+  </div>
+</section>
+
+<section id="newslatter" class="section-p1">
+  <div class="newstext">
+    <h4>sign in for newslatter</h4>
+    <p>get -email-address</p>
+  </div>
+  <div class="form"><input type="text" placeholder="your -email-address">
+  <button class="normal">Sign-up</button></div>
+</section>
+<footer class="section-p1">
+  <div class="col">
+    <img src="" alt="">
+    <h4>contact us</h4>
+    <p><strong>Adresss:</strong>boirag</p>
+    <p><strong>Phone:</strong>013154393838</p>
+    <p><strong>facebook:</strong>md blabla</p>
+    <div class="social">
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-youtube"></i>
+    </div>
+  </div>
+  <div class="col"><h4>about us</h4>
+    <a href="#">about us</a>
+    <a href="#">Delivery information</a>
+    <a href="#">privacy policy</a>
+    <a href="#">terms and condition </a>
+    <a href="#">contact us</a>
+  </div>
+  <div class="col"><h4>accout</h4>
+    <a href="#">about us</a>
+    <a href="#">Delivery information</a>
+    <a href="#">privacy policy</a>
+    <a href="#">terms and condition </a>
+    <a href="#">contact us</a>
+  </div>
+  <div class="col-install">
+    <h2>install app</h2>
+    <div class="row">
+      <img src="app.jpg" alt="">
+      <img src="play.jpg" alt="">
+      <h4>secure pament get way</h4>
+      <img src="pay.png" alt="">
+    </div>
+  </div>
+</footer>
+ <script src="practice.js">
+ let mainimg = document.querySelector("#MainImg");
+let smallimg = document.querySelectorAll(".small-img"); // Changed to querySelectorAll
+
+// Use a loop instead of writing it out 4 times!
+smallimg.forEach((img) => {
+  img.onclick = function() {
+    mainimg.src = img.src;
+  };
+});
+function orderWhatsApp() {
+  let product = document.querySelector(".single-pro-details h4").innerText;
+  let price = document.querySelector(".single-pro-details h2").innerText;
+  let size = document.querySelector("select").value;
+  let qty = document.querySelector("input[type='number']").value;
+
+  let phone = "8801315439838"; // Added country code (88 for Bangladesh)
+
+  let message = `Hello, I want to order:
+Product: ${product}
+Price: ${price}
+Size: ${size}
+Quantity: ${qty}`;
+
+  let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+  window.open(url, "_blank");
+}
+ </script> 
+</body>
+</html>
