@@ -2,373 +2,1048 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-#prodetails {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-#prodetails .single-pro-image {
-  width: 40%;
-}
-
-#prodetails .small-img-group {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-.small-img-col {
-  flex-basis: 24%; /* Fits 4 images perfectly with small gaps */
-  cursor: pointer;
-}
-
-#prodetails .single-pro-details {
-  width: 50%;
-  padding-top: 30px;
-  display: flex;
-  flex-direction: column; /* Stacks text/buttons vertically */
-}
-
-.single-pro-details h4 {
-  padding: 20px 0 10px 0;
-}
-.whatsapp-button {
-  display: inline-flex;
-  align-items: center;
-  background-color: #25D366; /* Official WhatsApp Green */
-  color: #ffffff;            /* White text */
-  padding: 12px 24px;
-  border-radius: 10px;        /* Rounded corners */
-  text-decoration: none;     /* Removes the underline */
-  font-family: sans-serif;
-  font-weight: 600;
-  transition: background 0.3s ease;
-}
-
-/* Size and spacing for the logo */
-.whatsapp-button img {
-  width: 22px;
-  height: 22px;
-  margin-right: 10px;
-}
-
-/* Darkens slightly when you hover over it */
-.whatsapp-button:hover {
-  background-color: #1ebe57;
-}
-
-.single-pro-details select {
-  display: block;
-  padding: 10px;
-  margin-bottom: 20px;
-  width: 120px;
-}
-
-.single-pro-details input {
-  width: 50px;
-  height: 40px;
-  padding-left: 10px;
-  font-size: 16px;
-  margin-right: 10px;
-}
-</style>
-  <link rel="stylesheet" href="practice.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <title>Mysha</title>
+  <title>Mysha – Men's Fashion T-Shirt</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #FDF8F2;
+      --warm: #F5EDE0;
+      --accent: #C8402A;
+      --accent2: #E8A44A;
+      --dark: #1C1209;
+      --mid: #6B5744;
+      --light: #B5A090;
+      --green: #25D366;
+      --white: #ffffff;
+      --radius: 14px;
+      --shadow: 0 4px 24px rgba(28,18,9,0.10);
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    #head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 70px;
+      background: var(--white);
+      border-bottom: 1px solid #EDE5DA;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-m img { height: 44px; object-fit: contain; }
+    .logo-m span {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--dark);
+      letter-spacing: 0.04em;
+    }
+
+    #navbar {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    #navbar a {
+      text-decoration: none;
+      color: var(--mid);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    #navbar a:hover, #navbar a.active { color: var(--accent); }
+
+    #navbar #lg-bag a {
+      background: var(--accent);
+      color: var(--white);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    #navbar #lg-bag a:hover { background: #a83220; color: var(--white); }
+
+    #close { display: none; }
+
+    #mobile {
+      display: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: var(--dark);
+    }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      padding: 14px 5%;
+      font-size: 13px;
+      color: var(--light);
+    }
+    .breadcrumb a { color: var(--light); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { color: var(--mid); font-weight: 500; }
+
+    /* ── PRODUCT DETAIL ── */
+    #prodetails {
+      display: flex;
+      gap: 48px;
+      padding: 0 5% 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Left: images */
+    .single-pro-image { width: 48%; flex-shrink: 0; }
+
+    .main-img-wrap {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--warm);
+      aspect-ratio: 1/1;
+    }
+
+    .main-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .main-img-wrap:hover img { transform: scale(1.04); }
+
+    .badge-sale {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px; font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 50px;
+      letter-spacing: 0.06em;
+    }
+
+    .small-img-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .small-img-col {
+      flex: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.2s;
+      aspect-ratio: 1/1;
+      background: var(--warm);
+    }
+
+    .small-img-col:hover, .small-img-col.active { border-color: var(--accent); }
+
+    .small-img-col img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+
+    /* Right: details */
+    .single-pro-details { flex: 1; padding-top: 8px; }
+
+    .pro-brand {
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 8px;
+    }
+
+    .single-pro-details h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 3vw, 34px);
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .stars { color: var(--accent2); font-size: 14px; }
+    .rating-count { font-size: 13px; color: var(--light); }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .price-now {
+      font-size: 32px; font-weight: 700;
+      color: var(--accent);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .price-was {
+      font-size: 18px;
+      color: var(--light);
+      text-decoration: line-through;
+    }
+
+    .price-off {
+      background: #FFF0E8; color: var(--accent);
+      font-size: 12px; font-weight: 700;
+      padding: 3px 10px; border-radius: 20px;
+    }
+
+    .divider { border: none; border-top: 1px solid #EDE5DA; margin: 20px 0; }
+
+    /* Size selector */
+    .option-label {
+      font-size: 13px; font-weight: 600;
+      color: var(--mid);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .size-grid {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+
+    .size-btn {
+      width: 48px; height: 48px;
+      border: 1.5px solid #E0D5C8;
+      border-radius: 10px;
+      background: var(--white);
+      color: var(--dark);
+      font-size: 13px; font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+
+    .size-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .size-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* Qty + action */
+    .cart-action {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .qty-box {
+      display: flex;
+      align-items: center;
+      border: 1.5px solid #E0D5C8;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .qty-box button {
+      width: 38px; height: 48px;
+      border: none; background: none;
+      font-size: 18px; cursor: pointer;
+      color: var(--mid);
+      transition: background 0.15s;
+    }
+
+    .qty-box button:hover { background: var(--warm); }
+
+    .qty-box input {
+      width: 46px; height: 48px;
+      border: none; border-left: 1.5px solid #E0D5C8; border-right: 1.5px solid #E0D5C8;
+      text-align: center;
+      font-size: 15px; font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--dark);
+      background: var(--white);
+    }
+
+    .qty-box input:focus { outline: none; }
+
+    .btn-whatsapp {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 0 24px;
+      height: 48px;
+      border-radius: 10px;
+      font-size: 15px; font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: 'DM Sans', sans-serif;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-whatsapp:hover { background: #1aab52; }
+    .btn-whatsapp i { font-size: 18px; }
+
+    .btn-wishlist {
+      width: 48px; height: 48px;
+      border: 1.5px solid #E0D5C8;
+      border-radius: 10px;
+      background: var(--white);
+      color: var(--light);
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.18s;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .btn-wishlist:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Perks strip */
+    .perks-strip {
+      display: flex;
+      gap: 0;
+      border: 1.5px solid #EDE5DA;
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+
+    .perk {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 14px 8px;
+      background: var(--white);
+      font-size: 11px;
+      color: var(--mid);
+      font-weight: 500;
+      border-right: 1px solid #EDE5DA;
+      text-align: center;
+    }
+
+    .perk:last-child { border-right: none; }
+    .perk i { font-size: 17px; color: var(--accent2); }
+
+    /* Product description accordion */
+    .accordion {
+      border: 1.5px solid #EDE5DA;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .accordion-item { border-bottom: 1px solid #EDE5DA; }
+    .accordion-item:last-child { border-bottom: none; }
+
+    .accordion-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 18px;
+      cursor: pointer;
+      background: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+      transition: background 0.15s;
+    }
+
+    .accordion-header:hover { background: var(--warm); }
+    .accordion-header i { color: var(--light); font-size: 13px; transition: transform 0.25s; }
+    .accordion-header.open i { transform: rotate(180deg); }
+
+    .accordion-body {
+      display: none;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.7;
+      background: var(--cream);
+    }
+
+    .accordion-body.show { display: block; }
+
+    /* ── NEW ARRIVALS ── */
+    #products {
+      padding: 50px 5%;
+      background: var(--white);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .section-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3.5vw, 40px);
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .section-header p {
+      color: var(--light);
+      font-size: 15px;
+    }
+
+    .section-header .underline {
+      width: 48px; height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin: 10px auto 0;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .pro {
+      background: var(--cream);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid #EDE5DA;
+      transition: transform 0.22s, box-shadow 0.22s;
+      position: relative;
+    }
+
+    .pro:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .pro-img-wrap {
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      background: var(--warm);
+    }
+
+    .pro img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s;
+    }
+
+    .pro:hover img { transform: scale(1.06); }
+
+    .des {
+      padding: 14px 14px 10px;
+    }
+
+    .des span {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent2);
+    }
+
+    .des h5 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+      margin: 4px 0 6px;
+    }
+
+    .des .star { color: var(--accent2); font-size: 12px; margin-bottom: 6px; }
+
+    .des h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .pro .cart-icon {
+      position: absolute;
+      bottom: 14px; right: 14px;
+      width: 36px; height: 36px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .pro .cart-icon:hover { background: #a83220; }
+
+    /* ── NEWSLETTER ── */
+    #newslatter {
+      background: var(--dark);
+      padding: 56px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .newstext h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 2.5vw, 30px);
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .newstext p { color: var(--light); font-size: 14px; }
+
+    .news-form {
+      display: flex;
+      gap: 0;
+      border-radius: 50px;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,0.15);
+    }
+
+    .news-form input {
+      background: transparent;
+      border: none;
+      padding: 13px 22px;
+      color: var(--white);
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      width: 260px;
+      outline: none;
+    }
+
+    .news-form input::placeholder { color: rgba(255,255,255,0.4); }
+
+    .news-form button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 13px 26px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: background 0.2s;
+    }
+
+    .news-form button:hover { background: #a83220; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #130D06;
+      color: rgba(255,255,255,0.7);
+      padding: 52px 5% 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 36px;
+    }
+
+    footer h4 {
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    footer p, footer a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      line-height: 2;
+      display: block;
+      text-decoration: none;
+      transition: color 0.18s;
+    }
+
+    footer a:hover { color: var(--accent2); }
+
+    .social { display: flex; gap: 12px; margin-top: 14px; }
+
+    .social i {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .social i:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    .col-install h2 {
+      font-size: 15px; font-weight: 600;
+      color: var(--white);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .app-badges { display: flex; flex-direction: column; gap: 10px; }
+
+    .app-badges img {
+      height: 38px; object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .pay-label {
+      font-size: 12px; color: rgba(255,255,255,0.4);
+      margin: 14px 0 6px;
+    }
+
+    .pay-img { height: 28px; object-fit: contain; opacity: 0.65; }
+
+    .footer-bottom {
+      grid-column: 1 / -1;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ── MOBILE NAV ── */
+    @media (max-width: 768px) {
+      #mobile { display: block; }
+
+      .text {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 72%;
+        height: 100vh;
+        background: var(--white);
+        z-index: 200;
+        padding: 80px 30px 30px;
+        transition: right 0.3s ease;
+        box-shadow: -4px 0 24px rgba(0,0,0,0.12);
+      }
+
+      .text.active { right: 0; }
+
+      #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+      }
+
+      #navbar li { width: 100%; border-bottom: 1px solid #EDE5DA; }
+      #navbar a { display: block; padding: 14px 0; font-size: 16px; color: var(--dark); }
+      #navbar #lg-bag a { background: none; color: var(--dark); padding: 14px 0; border-radius: 0; }
+
+      #close {
+        display: block;
+        position: absolute;
+        top: 22px; right: 24px;
+        font-size: 22px;
+        color: var(--dark);
+      }
+
+      /* Product layout stacks */
+      #prodetails {
+        flex-direction: column;
+        gap: 24px;
+        padding: 0 4% 40px;
+      }
+
+      .single-pro-image { width: 100%; }
+      .single-pro-details { padding-top: 0; }
+
+      .cart-action { gap: 10px; }
+      .btn-whatsapp { font-size: 14px; padding: 0 16px; }
+
+      .perks-strip { flex-wrap: wrap; }
+      .perk { flex-basis: 50%; border-bottom: 1px solid #EDE5DA; }
+      .perk:nth-child(2) { border-right: none; }
+
+      #newslatter { flex-direction: column; text-align: center; }
+      .news-form { width: 100%; }
+      .news-form input { width: 100%; flex: 1; }
+
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    }
+
+    @media (max-width: 400px) {
+      .products-grid { grid-template-columns: 1fr; }
+      .size-btn { width: 44px; height: 44px; }
+    }
+  </style>
 </head>
 <body>
+
+<!-- ── NAV ── -->
 <section id="head">
-  <div class="logo-m"><img src="logo.png"alt=""></div>
-<div class="text">
+  <div class="logo-m">
+    <img src="logo.png" alt="Mysha" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <span style="display:none">Mysha</span>
+  </div>
+  <div class="text">
     <ul id="navbar">
-      <li id="lg-bag"><a href="cart.html">
       <a href="#" id="close"><i class="fas fa-times"></i></a>
       <li><a href="index.html">Home</a></li>
       <li><a class="active" href="shop.html">Shop</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="about.html">About us</a></li>
-      <li><a href="contact.html">Contact us</a></li>
-      <i class="fa-solid fa-bag-shopping"></i></a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i> Cart</a></li>
     </ul>
   </div>
-
-  <div id="mobile">
-    <i id="bar" class="fas fa-outdent"></i>
-  </div>
+  <div id="mobile"><i id="bar" class="fas fa-bars"></i></div>
 </section>
-<section id="prodetails" class="section-p1">
-  <div class="single-pro-image">
-    <img src="f8.jpg" width="100%" id="MainImg" alt="Main Product Image">
 
+<!-- ── BREADCRUMB ── -->
+<div class="breadcrumb">
+  <a href="index.html">Home</a> &nbsp;/&nbsp;
+  <a href="shop.html">Shop</a> &nbsp;/&nbsp;
+  <span>Men's Fashion T-Shirt</span>
+</div>
+
+<!-- ── PRODUCT DETAIL ── -->
+<section id="prodetails">
+  <div class="single-pro-image">
+    <div class="main-img-wrap">
+      <span class="badge-sale">SALE</span>
+      <img src="w2.png" id="MainImg" alt="Men's Fashion T-Shirt">
+    </div>
     <div class="small-img-group">
-      <div class="small-img-col">
-        <img src="f8.jpg" width="100%" class="small-img" alt="">
-      </div>
-      <div class="small-img-col">
-        <img src="f7.jpg" width="100%" class="small-img" alt="">
-      </div>
-      <div class="small-img-col">
-        <img src="f2.jpg" width="100%" class="small-img" alt="">
-      </div>
-      <div class="small-img-col">
-        <img src="f4.jpg" width="100%" class="small-img" alt="">
-      </div>
+      <div class="small-img-col active"><img src="w2.png" class="small-img" alt=""></div>
+      <div class="small-img-col"><img src="w1.png" class="small-img" alt=""></div>
+      <div class="small-img-col"><img src="b1.png" class="small-img" alt=""></div>
+      <div class="small-img-col"><img src="bl2.png" class="small-img" alt=""></div>
     </div>
   </div>
 
   <div class="single-pro-details">
-    <h6>Home / T-Shirt</h6>
-    <h4>Men's Fashion T-Shirt</h4>
-    <h2>$23.00</h2>
-    
-    <select>
-      <option>Select Size</option>
-      <option>XL</option>
-      <option>M</option>
-      <option>L</option>
-      <option>XXL</option>
-    </select>
+    <p class="pro-brand">DIRT LIFE</p>
+    <h2>WHITE ORANGE DROPSHOLDER</h2>
+
+    <div class="rating-row">
+      <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+      </div>
+      <span class="rating-count">(4.5 · 128 reviews)</span>
+    </div>
+
+    <div class="price-row">
+      <span class="price-now">300 ৳</span>
+      <span class="price-was">350 ৳</span>
+      <span class="price-off">42% OFF</span>
+    </div>
+
+    <hr class="divider">
+
+    <p class="option-label">Select Size</p>
+    <div class="size-grid">
+      <button class="size-btn active">M</button>
+      <button class="size-btn">L</button>
+      <button class="size-btn">XL</button>
+    </div>
 
     <div class="cart-action">
-      <input type="number" value="1">
-      <button class="normal" onclick="orderWhatsApp()">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20">
-  Order on WhatsApp
-</button>
-    </div>
-<h4>Product Details</h4>
-    <p>This premium cotton T-shirt offers a relaxed fit and durable stitching, perfect for everyday fashion.</p>
-  </div>
-</section>
-<section id="products" class="section-p1">
-  <h1>New Arrivals</h1>
-  <p>Summer Cddjfjdfj</p>
-  
-  <div class="container">
-    <div class="pro">
-      <img src="n1.jpg" alt="Carton T-shirt">
-      
-      <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$500</h4>
+      <div class="qty-box">
+        <button id="minus">−</button>
+        <input type="number" id="qty" value="1" min="1">
+        <button id="plus">+</button>
       </div>
-      
-      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+      <button class="btn-whatsapp" onclick="orderWhatsApp()">
+        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+      </button>
+      <button class="btn-wishlist"><i class="far fa-heart"></i></button>
     </div>
-    <div class="pro">
-      <img src="n2.jpg" alt="Carton T-shirt">
-      
-      <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$500</h4>
-      </div>
-      
-      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+
+    <div class="perks-strip">
+      <div class="perk"><i class="fas fa-rotate-left"></i>Easy Return</div>
+      <div class="perk"><i class="fas fa-shield-halved"></i>Secure Pay</div>
+      <div class="perk"><i class="fas fa-tag"></i>Best Price</div>
     </div>
-    <div class="pro">
-      <img src="n3.jpg" alt="Carton T-shirt">
-      
-      <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
+
+    <hr class="divider">
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-header open">
+          Product Details <i class="fas fa-chevron-down"></i>
         </div>
-        <h4>$500</h4>
-      </div>
-      
-      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="n4.jpg" alt="Carton T-shirt">
-      
-      <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
+        <div class="accordion-body show">
+          This premium cotton T-shirt offers a relaxed fit and durable stitching, perfect for everyday fashion. Made from 100% organic cotton for all-day comfort.
         </div>
-        <h4>$500</h4>
       </div>
-      
-      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="n5.jpg" alt="Carton T-shirt">
-      
-      <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
+      <div class="accordion-item">
+        <div class="accordion-header">
+          Size & Fit <i class="fas fa-chevron-down"></i>
         </div>
-        <h4>$500</h4>
-      </div>
-      
-      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="n6.jpg" alt="Carton T-shirt">
-      
-      <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
+        <div class="accordion-body">
+          Model is 6ft tall and wears size M. We recommend ordering your usual size. If between sizes, size up for a relaxed fit.
         </div>
-        <h4>$500</h4>
       </div>
-      
-      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="n7.jpg" alt="Carton T-shirt">
-      
-      <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
+      <div class="accordion-item">
+        <div class="accordion-header">
+          Shipping & Returns <i class="fas fa-chevron-down"></i>
         </div>
-        <h4>$500</h4>
-      </div>
-      
-      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="n8.jpg" alt="Carton T-shirt">
-      
-      <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
+        <div class="accordion-body">
+          Free delivery on orders over $50. Standard delivery 3–5 business days. Easy 30-day returns on unused items.
         </div>
-        <h4>$500</h4>
       </div>
-      
-      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
     </div>
   </div>
 </section>
 
-<section id="newslatter" class="section-p1">
-  <div class="newstext">
-    <h4>sign in for newslatter</h4>
-    <p>get -email-address</p>
+<!-- ── NEW ARRIVALS ── -->
+<section id="products">
+  <div class="section-header">
+    <h1>New Arrivals</h1>
+    <p>Fresh styles for the season</p>
+    <div class="underline"></div>
   </div>
-  <div class="form"><input type="text" placeholder="your -email-address">
-  <button class="normal">Sign-up</button></div>
+
+  <div class="products-grid">
+    <div class="pro" onclick="location.href='sproduct.html'">
+      <div class="pro-img-wrap"><img src="n1.jpg" alt="T-shirt"></div>
+      <div class="des">
+        <span>Mysha</span>
+        <h5>Classic Tee</h5>
+        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <h4>$19.99</h4>
+      </div>
+      <a href="sproduct.html" class="cart-icon"><i class="fas fa-shopping-bag"></i></a>
+    </div>
+    <div class="pro" onclick="location.href='sproduct.html'">
+      <div class="pro-img-wrap"><img src="n2.jpg" alt="T-shirt"></div>
+      <div class="des">
+        <span>Mysha</span>
+        <h5>Urban Fit Tee</h5>
+        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <h4>$21.99</h4>
+      </div>
+      <a href="sproduct.html" class="cart-icon"><i class="fas fa-shopping-bag"></i></a>
+    </div>
+    <div class="pro" onclick="location.href='sproduct.html'">
+      <div class="pro-img-wrap"><img src="n3.jpg" alt="T-shirt"></div>
+      <div class="des">
+        <span>Mysha</span>
+        <h5>Graphic Street Tee</h5>
+        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <h4>$24.99</h4>
+      </div>
+      <a href="sproduct.html" class="cart-icon"><i class="fas fa-shopping-bag"></i></a>
+    </div>
+    <div class="pro" onclick="location.href='sproduct.html'">
+      <div class="pro-img-wrap"><img src="n4.jpg" alt="T-shirt"></div>
+      <div class="des">
+        <span>Mysha</span>
+        <h5>Premium Cotton Tee</h5>
+        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <h4>$22.99</h4>
+      </div>
+      <a href="sproduct.html" class="cart-icon"><i class="fas fa-shopping-bag"></i></a>
+    </div>
+    <div class="pro" onclick="location.href='sproduct.html'">
+      <div class="pro-img-wrap"><img src="n5.jpg" alt="T-shirt"></div>
+      <div class="des">
+        <span>Mysha</span>
+        <h5>Summer Drop Tee</h5>
+        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <h4>$18.99</h4>
+      </div>
+      <a href="sproduct.html" class="cart-icon"><i class="fas fa-shopping-bag"></i></a>
+    </div>
+    <div class="pro" onclick="location.href='sproduct.html'">
+      <div class="pro-img-wrap"><img src="n6.jpg" alt="T-shirt"></div>
+      <div class="des">
+        <span>Mysha</span>
+        <h5>Minimal Logo Tee</h5>
+        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <h4>$20.99</h4>
+      </div>
+      <a href="sproduct.html" class="cart-icon"><i class="fas fa-shopping-bag"></i></a>
+    </div>
+    <div class="pro" onclick="location.href='sproduct.html'">
+      <div class="pro-img-wrap"><img src="n7.jpg" alt="T-shirt"></div>
+      <div class="des">
+        <span>Mysha</span>
+        <h5>Relaxed Fit Tee</h5>
+        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <h4>$23.99</h4>
+      </div>
+      <a href="sproduct.html" class="cart-icon"><i class="fas fa-shopping-bag"></i></a>
+    </div>
+    <div class="pro" onclick="location.href='sproduct.html'">
+      <div class="pro-img-wrap"><img src="n8.jpg" alt="T-shirt"></div>
+      <div class="des">
+        <span>Mysha</span>
+        <h5>Bold Print Tee</h5>
+        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <h4>$25.99</h4>
+      </div>
+      <a href="sproduct.html" class="cart-icon"><i class="fas fa-shopping-bag"></i></a>
+    </div>
+  </div>
 </section>
-<footer class="section-p1">
+
+<!-- ── NEWSLETTER ── -->
+<section id="newslatter">
+  <div class="newstext">
+    <h4>Get exclusive deals in your inbox</h4>
+    <p>Subscribe and be the first to know about new arrivals and offers</p>
+  </div>
+  <div class="news-form">
+    <input type="email" placeholder="Enter your email address">
+    <button>Subscribe</button>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
   <div class="col">
-    <img src="" alt="">
-    <h4>contact us</h4>
-    <p><strong>Adresss:</strong>boirag</p>
-    <p><strong>Phone:</strong>013154393838</p>
-    <p><strong>facebook:</strong>md blabla</p>
+    <h4>Mysha Store</h4>
+    <p><i class="fas fa-location-dot"></i> &nbsp;Boirag, Bangladesh</p>
+    <p><i class="fas fa-phone"></i> &nbsp;+880 1315 134 142</p>
+    <p><i class="fab fa-facebook"></i> &nbsp;Mysha Official</p>
     <div class="social">
       <i class="fab fa-facebook-f"></i>
-      <i class="fab fa-twitter"></i>
       <i class="fab fa-instagram"></i>
+      <i class="fab fa-tiktok"></i>
       <i class="fab fa-youtube"></i>
     </div>
   </div>
-  <div class="col"><h4>about us</h4>
-    <a href="#">about us</a>
-    <a href="#">Delivery information</a>
-    <a href="#">privacy policy</a>
-    <a href="#">terms and condition </a>
-    <a href="#">contact us</a>
+  <div class="col">
+    <h4>About</h4>
+    <a href="#">About Us</a>
+    <a href="#">Delivery Info</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms & Conditions</a>
+    <a href="#">Contact Us</a>
   </div>
-  <div class="col"><h4>accout</h4>
-    <a href="#">about us</a>
-    <a href="#">Delivery information</a>
-    <a href="#">privacy policy</a>
-    <a href="#">terms and condition </a>
-    <a href="#">contact us</a>
+  <div class="col">
+    <h4>Account</h4>
+    <a href="#">My Account</a>
+    <a href="#">Order History</a>
+    <a href="#">Wishlist</a>
+    <a href="#">Track Order</a>
+    <a href="#">Returns</a>
   </div>
   <div class="col-install">
-    <h2>install app</h2>
-    <div class="row">
-      <img src="app.jpg" alt="">
-      <img src="play.jpg" alt="">
-      <h4>secure pament get way</h4>
-      <img src="pay.png" alt="">
+    <h2>Install App</h2>
+    <div class="app-badges">
+      <img src="app.jpg" alt="App Store">
+      <img src="play.jpg" alt="Google Play">
     </div>
+    <p class="pay-label">Secure Payment</p>
+    <img src="pay.png" alt="Payment Methods" class="pay-img">
+  </div>
+  <div class="footer-bottom">
+    © 2025 Mysha Store. All rights reserved.
   </div>
 </footer>
- <script src="practice.js">
- let mainimg = document.querySelector("#MainImg");
-let smallimg = document.querySelectorAll(".small-img"); // Changed to querySelectorAll
 
-// Use a loop instead of writing it out 4 times!
-smallimg.forEach((img) => {
-  img.onclick = function() {
-    mainimg.src = img.src;
-  };
-});
-function orderWhatsApp() {
-  let product = document.querySelector(".single-pro-details h4").innerText;
-  let price = document.querySelector(".single-pro-details h2").innerText;
-  let size = document.querySelector("select").value;
-  let qty = document.querySelector("input[type='number']").value;
+<script src="practice.js"></script>
+<script>
+  // Image gallery
+  const mainImg = document.querySelector("#MainImg");
+  const smallImgs = document.querySelectorAll(".small-img");
+  const smallCols = document.querySelectorAll(".small-img-col");
 
-  let phone = "8801315439838"; // Added country code (88 for Bangladesh)
+  smallCols.forEach((col, i) => {
+    col.addEventListener("click", () => {
+      mainImg.src = smallImgs[i].src;
+      smallCols.forEach(c => c.classList.remove("active"));
+      col.classList.add("active");
+    });
+  });
 
-  let message = `Hello, I want to order:
-Product: ${product}
-Price: ${price}
-Size: ${size}
-Quantity: ${qty}`;
+  // Quantity
+  document.getElementById("plus").addEventListener("click", () => {
+    let q = parseInt(document.getElementById("qty").value);
+    document.getElementById("qty").value = q + 1;
+  });
 
-  let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-  window.open(url, "_blank");
-}
- </script> 
+  document.getElementById("minus").addEventListener("click", () => {
+    let q = parseInt(document.getElementById("qty").value);
+    if (q > 1) document.getElementById("qty").value = q - 1;
+  });
+
+  // Size buttons
+  document.querySelectorAll(".size-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".size-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    });
+  });
+
+  // Accordion
+  document.querySelectorAll(".accordion-header").forEach(header => {
+    header.addEventListener("click", () => {
+      const body = header.nextElementSibling;
+      const isOpen = header.classList.contains("open");
+      document.querySelectorAll(".accordion-header").forEach(h => {
+        h.classList.remove("open");
+        h.nextElementSibling.classList.remove("show");
+      });
+      if (!isOpen) {
+        header.classList.add("open");
+        body.classList.add("show");
+      }
+    });
+  });
+
+  // Mobile nav
+  document.getElementById("bar").addEventListener("click", () => {
+    document.querySelector(".text").classList.add("active");
+  });
+
+  document.getElementById("close").addEventListener("click", () => {
+    document.querySelector(".text").classList.remove("active");
+  });
+
+  // WhatsApp order
+  function orderWhatsApp() {
+    const product = document.querySelector(".single-pro-details h2").innerText;
+    const price = document.querySelector(".price-now").innerText;
+    const sizeBtn = document.querySelector(".size-btn.active");
+    const size = sizeBtn ? sizeBtn.innerText : "Not selected";
+    const qty = document.getElementById("qty").value;
+    const phone = "8801315134148";
+
+    const message =
+`Hello! I would like to order:
+*Product:* ${product}
+*Price:* ${price}
+*Size:* ${size}
+*Quantity:* ${qty}
+
+Please confirm my order. Thank you!`;
+
+    window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(message), "_blank");
+  }
+</script>
 </body>
 </html>

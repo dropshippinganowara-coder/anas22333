@@ -56,7 +56,11 @@ font-weight: 500;
     border-bottom: 2px solid #088178;
     padding-bottom: 4px;
 }
-
+.pro img {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
 /* Underline effect on hover */
 #head #navbar li a:hover::after {
     content: "";
@@ -76,96 +80,65 @@ font-weight: 500;
     display: none; /* Hide X on desktop */
 }
 
-/* --- Responsive Menu Fix --- */
-/* --- Tablet & Mobile Specific Menu --- */
-/* --- Responsive Tab & Mobile Menu --- */
-/* --- Tablet & Mobile (Under 799px) --- */
-@media (max-width: 799px) {
+/* 📱 Mobile Devices (Screens 768px and below) */
+@media (max-width: 768px) {
+    
+    /* 1. Give the header a safe, fixed height and keep items on one line */
     #head {
-        display: flex;
-        align-items: center;      /* Magic: Vertically centers everything in the bar */
-        justify-content: space-between; 
-        height: 80px;
+        height: 17vh; /* Fixed pixels keep the height stable on mobile */
         padding: 0 20px;
-        box-sizing: border-box;   /* Prevents padding from adding extra height */
-    }
-
-    #head .logo-m {
         display: flex;
-        align-items: center;     /* Double-check centering inside the div */
-        height: 100%;            /* Uses the full 80px height for alignment */
+        justify-content: space-between;
+        align-items: center; /* Vertically centers the logo and hamburger button */
+        flex-wrap: nowrap; /* FORCES everything to stay on one line inside the header */
     }
 
+    /* 2. Constrain the logo so it physically cannot break out of the header */
     #head .logo-m img {
-        height: auto;            /* Keeps aspect ratio */
-        max-height: 80px;        /* Adjust this (e.g., 40px to 60px) to fit your taste */
-        width: auto;
-        display: block;          /* KILLS the "ghost padding" under the image */
-        margin: 0;               /* Removes any default browser margins */
+        height: 40px; /* Leaves plenty of breathing room inside the 70px header */
+        width: auto;  /* Prevents the image from stretching or looking weird */
     }
-}
 
+    /* 3. Show and position the mobile hamburger button */
+    #mobile {
+        display: flex;
+        font-size: 24px;
+        cursor: pointer;
+        align-items: center; /* Centers the icon vertically */
+    }
 
-
-    #navbar {
+    /* 4. Turn the navbar into a vertical sliding drawer */
+    #head #navbar {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
         position: fixed;
         top: 0;
-        right: -300px; /* Off-screen */
-        height: 100vh;
+        right: -300px; /* Pushes it off-screen to hide it */
         width: 300px;
-        background-color: #E3E6F3;
-        box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+        height: 100vh;
+        background-color: aliceblue;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
         padding: 80px 0 0 30px;
+        gap: 30px; /* Spacing between stacked links */
         transition: 0.3s ease;
-        z-index: 1000; /* Stays on top */
+        z-index: 1000;
+    } 
+
+    /* 5. Class to slide the navbar into view (triggered by JS) */
+    #head #navbar.active {
+        right: 0;
     }
 
-    /* Triggered by your JavaScript */
-    #navbar.active {
-        right: 0px; 
-    }
-
-    #mobile {
-        display: flex; /* Makes #bar visible */
-        align-items: center;
-    }
-
-    #mobile i {
-        color: #1a1a1a;
-        font-size: 28px;
-        cursor: pointer;
-        z-index: 1001; /* Higher than header */
-    }
-
-    #close {
-        display: block; /* Makes X visible inside menu */
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        color: #222;
-        font-size: 24px;
-        cursor: pointer;
-    }
-
-    #lg-bag {
-        display: none;
+    #head #navbar li {
+        padding: 0;
     }
 }
-
-/* --- Mobile (Under 430px) --- */
-@media (max-width: 430px) {
-    #navbar {
-        width: 100%; /* Full screen menu for small phones */
-        right: -100%;
-    }
-}
+/*  css for hero section */
 #hero{
   background-image:url(hero4.png);
-  height: 90vh;
+  height: 75vh;
   padding: 0 80px;
   background-size:cover;
   background-position: top 25% right 0;
@@ -188,9 +161,7 @@ font-weight: 500;
   cursor: pointer;
   font-weight: 700;
 }
-.section-p1{
-  padding:40px 80px; 
-}
+
 
 #feature {
   display: flex;

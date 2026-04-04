@@ -3,22 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <style>
-.page-header{
-  background-image: url(b1.jpg);
-  background-size: cover;
-  width:100%;
-  height:40vh;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  text-align:center;
+.page-header {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
 }
-.page-header h2{
-  color:#fff;
+
+.header-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* ✅ Works perfectly on all screen sizes */
+    object-position: left center; /* ✅ Shows the text side on mobile */
 }
-.page-header p{
-  color:rosybrown;
+
+@media (max-width: 768px) {
+    .page-header {
+        height: 40vh; /* shorter on mobile so the wide image fits better */
+    }
 }
+
 #pagination{
   text-align: center;
 }
@@ -40,7 +51,7 @@ font-weight: 600;
   <link rel="stylesheet" href="practice.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <title>Mysha</title>
+  <title>GOLDEN HEART</title>
 </head>
 <body>
 <section id="head">
@@ -63,20 +74,20 @@ font-weight: 600;
   </div>
 </section>
 <section class="page-header">
-   <h2 style="font-size:45px">Shop stay</h2>
-<p> save more with copons & save 70%</p>
+  <img src="shop.jpg" alt="Premium T-Shirts" class="header-bg-img">
 </section>
+
 <section id="products" class="section-p1">
-  <h1>Featured Products</h1>
+  <h1>See T-shirt</h1>
   <p>Summer Collection New Modern Design</p>
   
   <div class="container">
     <div class="pro">
-      <img src="f1.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduct.html';">
+      <img src="b1.png" alt="Carton T-shirt" onclick="window.location.href='sproduct.html';">
       
       <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
+        <span>DNEM</span>
+        <h5>BLACK DROPSHOLDER</h5>
         <div class="star">
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
@@ -84,17 +95,17 @@ font-weight: 600;
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
         </div>
-        <h4>$500</h4>
+        <h4>300 ৳</h4>
       </div>
       
       <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
     </div>
     <div class="pro">
-      <img src="f2.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduc2.html';">
+      <img src="rb2.png" alt="Carton T-shirt" onclick="window.location.href='sproduct2.html';">
       
       <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
+        <span>TURBO</span>
+        <h5>ROSE BLACK DROPSHOLDER</h5>
         <div class="star">
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
@@ -102,17 +113,17 @@ font-weight: 600;
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
         </div>
-        <h4>$500</h4>
+        <h4>300 ৳</h4>
       </div>
       
       <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
     </div>
     <div class="pro">
-      <img src="f3.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduct3.html';">
+      <img src="bl1.png" alt="Carton T-shirt" onclick="window.location.href='sproduct3.html';">
       
       <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
+        <span>PRONTO</span>
+        <h5>BLUE DROPSHOLDER</h5>
         <div class="star">
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
@@ -120,17 +131,17 @@ font-weight: 600;
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
         </div>
-        <h4>$500</h4>
+        <h4>300 ৳</h4>
       </div>
       
       <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
     </div>
     <div class="pro">
-      <img src="f4.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduct4.html';">
+      <img src="nb1.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduct4.html';">
       
       <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
+        <span>NEVER</span>
+        <h5>LIGHT GREEN DROPSHOLDER</h5>
         <div class="star">
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
@@ -138,17 +149,17 @@ font-weight: 600;
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
         </div>
-        <h4>$500</h4>
+        <h4>300 ৳</h4>
       </div>
       
       <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
     </div>
     <div class="pro">
-      <img src="f5.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduct5.html';">
+      <img src="gb1.png" alt="Carton T-shirt" onclick="window.location.href='sproduct5.html';">
       
       <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
+        <span>MAGIC</span>
+        <h5>OLIVE DROPSHOLDER</h5>
         <div class="star">
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
@@ -156,17 +167,17 @@ font-weight: 600;
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
         </div>
-        <h4>$500</h4>
+        <h4>300 ৳</h4>
       </div>
       
       <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
     </div>
     <div class="pro">
-      <img src="f6.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduct6.html';">
+      <img src="wb1.png" alt="Carton T-shirt" onclick="window.location.href='sproduct6.html';">
       
       <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
+        <span>SUPPARA</span>
+        <h5>GRAY DROPSHOLDER</h5>
         <div class="star">
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
@@ -174,17 +185,17 @@ font-weight: 600;
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
         </div>
-        <h4>$500</h4>
+        <h4>300 ৳</h4>
       </div>
       
       <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
     </div>
     <div class="pro">
-      <img src="f7.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduct7.html';">
+      <img src="w1.png" alt="Carton T-shirt" onclick="window.location.href='sproduct7.html';">
       
       <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
+        <span>DIRT LIFE</span>
+        <h5>WHITE ORANGE DROPSHOLDER</h5>
         <div class="star">
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
@@ -192,17 +203,17 @@ font-weight: 600;
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
         </div>
-        <h4>$500</h4>
+        <h4>300 ৳</h4>
       </div>
       
       <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
     </div>
     <div class="pro">
-      <img src="f8.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduct8.html';">
+      <img src="w2.png" alt="Carton T-shirt" onclick="window.location.href='sproduct8.html';">
       
       <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
+        <span>DIRT LIFE</span>
+        <h5>WHITE ORANGE DROPSHOLDER</h5>
         <div class="star">
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
@@ -210,164 +221,197 @@ font-weight: 600;
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
         </div>
-        <h4>$500</h4>
-      </div>
-      
-      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-    </div>
-  </div>
-  <div class="container">
-    <div class="pro">
-      <img src="n1.jpg" alt="Carton T-shirt" >
-      
-      <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$500</h4>
-      </div>
-      
-      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="n2.jpg" alt="Carton T-shirt">
-      
-      <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$500</h4>
-      </div>
-      
-      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="n3.jpg" alt="Carton T-shirt">
-      
-      <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$500</h4>
-      </div>
-      
-      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="n4.jpg" alt="Carton T-shirt">
-      
-      <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$500</h4>
-      </div>
-      
-      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="n5.jpg" alt="Carton T-shirt">
-      
-      <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$500</h4>
-      </div>
-      
-      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="n6.jpg" alt="Carton T-shirt">
-      
-      <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$500</h4>
-      </div>
-      
-      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="n7.jpg" alt="Carton T-shirt">
-      
-      <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$500</h4>
-      </div>
-      
-      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="n8.jpg" alt="Carton T-shirt">
-      
-      <div class="des">
-        <span>adidas</span>
-        <h5>Carton T-shirt</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$500</h4>
+        <h4>300 ৳</h4>
       </div>
       
       <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
     </div>
   </div>
 </section>
-<section id="pagination" class="section-p1">
-  <a href="#">1</a>
-  <a href="#">2</a>
-  <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
 
+<section class="section-p1" id="banner" >
+  <h4>Repear Service</h4>
+  <h2>up to<spam> 70% offer</spam> all T-shit and Shirt</h2>
+  <button class="normal">Explore more</button>
+</section>
+<section id="products" class="section-p1">
+  <h1>UPCOMMING</h1>
+  <p>STYLISH PRODUCT</p>
+  
+  <div class="container">
+    <div class="pro">
+      <img src="n1.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduct9.html';">
+      
+      <div class="des">
+        <span>adidas</span>
+        <h5>YELLO BRAZIL JARSI</h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>300</h4>
+      </div>
+      
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+    <div class="pro">
+      <img src="n2.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduct10.html';">
+      
+      <div class="des">
+        <span>adidas</span>
+        <h5>BLACKBLUE BRAZIL JARSI</h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>300</h4>
+      </div>
+      
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+    <div class="pro">
+      <img src="n3.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduct11.html';">
+      
+      <div class="des">
+        <span>adidas</span>
+        <h5>WHITE ARGENTINA JARSI</h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>300</h4>
+      </div>
+      
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+    <div class="pro">
+      <img src="n4.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduct12.html';">
+      
+      <div class="des">
+        <span>adidas</span>
+        <h5>WHITE ARGENTINA JARSI</h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>300</h4>
+      </div>
+      
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+    <div class="pro">
+      <img src="n5.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduct13.html';">
+      
+      <div class="des">
+        <span>adidas</span>
+        <h5>WHITE SNAKER</h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>1300</h4>
+      </div>
+      
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+    <div class="pro">
+      <img src="n6.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduct14.html';">
+      
+      <div class="des">
+        <span>adidas</span>
+        <h5>WHITE SNAKER</h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>1300</h4>
+      </div>
+      
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+    <div class="pro">
+      <img src="n7.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduct15.html'">
+      
+      <div class="des">
+        <span>adidas</span>
+        <h5>WHITE SNAKER</h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>1300</h4>
+      </div>
+      
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+    <div class="pro">
+      <img src="n8.jpg" alt="Carton T-shirt" onclick="window.location.href='sproduct16.html';">
+      
+      <div class="des">
+        <span>adidas</span>
+        <h5>BLACK SNAKER</h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4>1300</h4>
+      </div>
+      
+      <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+    </div>
+  </div>
+</section>
+<section id="sam-banner">
+  <div class="banner-box">
+    <h4>Creazy deals</h4>
+    <h2>BUY AND WEAR</h2>
+    <span>the best classis dress</span>
+    <button class="normal">learn more</button>
+  </div>
+  <div class="banner-box2">
+    <h4>Spring summer</h4>
+    <h2>BUY AND WEAR</h2>
+    <span>the best classis dress</span>
+    <button class="normal">Collection</button>
+  </div>
+</section>
+<section id="bannner-3">
+  <div class="banner3-box">
+    <h2>Sesonal sale</h2>
+    <h3>Winter collection -50% offer</h3>
+  </div>
+  <div class="banner3-box2">
+    <h2>Sesonal sale</h2>
+    <h3>Winter collection -50% offer</h3>
+  </div>
+  <div class="banner3-box3">
+    <h2>Sesonal sale</h2>
+    <h3>Winter collection -50% offer</h3>
+  </div>
 </section>
 <section id="newslatter" class="section-p1">
   <div class="newstext">
@@ -381,9 +425,9 @@ font-weight: 600;
   <div class="col">
     <img src="" alt="">
     <h4>contact us</h4>
-    <p><strong>Adresss:</strong>boirag</p>
-    <p><strong>Phone:</strong>013154393838</p>
-    <p><strong>facebook:</strong>md blabla</p>
+    <p><strong>Adresss:</strong>ANOWARA</p>
+    <p><strong>Phone:</strong>01315134148</p>
+    <p><strong>facebook:</strong>GOLDEN HEART</p>
     <div class="social">
       <i class="fab fa-facebook-f"></i>
       <i class="fab fa-twitter"></i>
@@ -415,6 +459,6 @@ font-weight: 600;
     </div>
   </div>
 </footer>
- <script src="practice.js"></script>
+ <script src="practice.js"></script> 
 </body>
 </html>

@@ -2,227 +2,1120 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <style>
-.page-header{
-  background-image: url(banner.png);
-  background-size: cover;
-  width:100%;
-  height:40vh;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  text-align:center;
-}
-.page-header h2{
-  color:#fff;
-}
-.page-header p{
-  color:rosybrown;
-}
-/* Container styling */
-#page-head {
-    display: flex;
-    align-items: center; /* Vertically centers the content */
-    justify-content: space-between;
-    padding: 40px 80px;
-    gap: 40px; /* Space between image and text */
-}
-
-/* Image styling */
-#page-head img {
-    width: 50%; /* Takes up half the container */
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Text content box */
-#page-head div {
-    width: 50%;
-}
-
-/* Heading styling */
-#page-head h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #222;
-}
-
-/* Paragraph and Abbreviation styling */
-#page-head p {
-    color: #465b52;
-    line-height: 1.6;
-}
-
-#page-head abbr {
-    display: block;
-    margin-top: 15px;
-    color: #777;
-    text-decoration: none; /* Removes the default dotted underline */
-}
-
-/* Marquee styling */
-#page-head marquee {
-    margin-top: 25px;
-    padding: 10px;
-    font-weight: 600;
-    border-radius: 4px;
-}
-
-/* Responsive design for mobile */
-@media (max-width: 799px) {
-    #page-head {
-        flex-direction: column;
-        padding: 40px;
-    }
-
-    #page-head img, 
-    #page-head div {
-        width: 100%;
-    }
-}
-/* Target only this specific section */
-#download-app {
-    text-align: center;
-    padding: 80px 20px;
-    background-color: #f0f2f5; /* Light grey tech background */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-}
-
-/* Heading styles */
-#download-app h1 {
-    font-size: 2.5rem;
-    font-family: 'sans-serif';
-    color: #222;
-    letter-spacing: 1px;
-}
-
-/* App Link styles */
-#download-app h1 a {
-    color: #088178;
-    text-decoration: none;
-    border-bottom: 3px solid #088178;
-    transition: 0.3s ease-in-out;
-}
-
-#download-app h1 a:hover {
-    color: #045e58;
-    border-bottom-color: #045e58;
-}
-
-/* Video Styling (Phone Mockup Look) */
-#download-app video {
-    width: 70vw;
-    border-radius: 40px; /* Gives it that smartphone shape */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border: 10px solid #ffffff; /* White phone frame */
-    outline: 2px solid #ddd;
-    background-color: #000;
-}
-
-/* Responsive adjustments */
-@media (max-width: 480px) {
-    #download-app h1 {
-        font-size: 1.8rem;
-    }
-    
-    #download-app video {
-        width: 80%; /* Shrinks on small mobile screens */
-    }
-}
-
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="practice.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <title>Mysha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>GOLDEN HEART — About Us</title>
+
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #e8c97a;
+      --gold-pale: #f9f3e3;
+      --dark: #1a1410;
+      --dark-mid: #2e2318;
+      --mid: #5c4a2a;
+      --text: #3b2f1e;
+      --muted: #8a7560;
+      --white: #fffdf8;
+      --border: rgba(201,168,76,0.25);
+      --shadow: 0 20px 60px rgba(26,20,16,0.12);
+      --radius: 16px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .page-hero {
+      position: relative;
+      height: 55vh;
+      min-height: 360px;
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.2) 0%, transparent 70%),
+        linear-gradient(160deg, #1a1410 0%, #2e2318 50%, #1a1410 100%);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-content { position: relative; z-index: 2; padding: 0 20px; }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      padding: 6px 20px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+      background: rgba(201,168,76,0.08);
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero-title span { color: var(--gold); font-style: italic; }
+
+    .hero-sub {
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ── FLOATING STATS ── */
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 40px;
+      margin-top: -52px;
+      position: relative;
+      z-index: 10;
+      flex-wrap: wrap;
+    }
+
+    .stat-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 30px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      flex: 1;
+      min-width: 150px;
+      max-width: 200px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .stat-card:hover { transform: translateY(-5px); box-shadow: 0 28px 70px rgba(26,20,16,0.16); }
+
+    .stat-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-card p {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+    }
+
+    /* ── WHO WE ARE ── */
+    #page-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      padding: 100px 80px;
+      align-items: center;
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+
+    .about-img-wrap img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 20px;
+      display: block;
+    }
+
+    .about-img-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--gold), transparent 60%);
+      z-index: -1;
+    }
+
+    .img-badge {
+      position: absolute;
+      bottom: 28px;
+      left: -24px;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 24px;
+      color: var(--white);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+
+    .img-badge h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+    }
+
+    .img-badge p { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 4px; letter-spacing: 1px; text-transform: uppercase; }
+
+    .about-text {}
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .about-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+
+    .about-text h2 em { color: var(--gold); font-style: italic; }
+
+    .about-text p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .highlight-strip {
+      background: var(--gold-pale);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin: 24px 0;
+      font-size: 14px;
+      color: var(--mid);
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    .about-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--dark);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 14px 30px;
+      border-radius: 100px;
+      margin-top: 10px;
+      transition: all 0.3s;
+    }
+
+    .about-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,168,76,0.4); }
+
+    /* ── MISSION / VISION ── */
+    #mission {
+      background: var(--dark);
+      padding: 100px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #mission::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mission-header {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mission-header .eyebrow { color: var(--gold); }
+
+    .mission-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .mission-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 36px 28px;
+      transition: all 0.3s;
+    }
+
+    .mission-card:hover {
+      background: rgba(201,168,76,0.06);
+      border-color: rgba(201,168,76,0.3);
+      transform: translateY(-4px);
+    }
+
+    .mission-icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+
+    .mission-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .mission-card p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.75;
+    }
+
+    /* ── PRODUCTS / WHAT WE SELL ── */
+    #what-we-sell {
+      padding: 100px 80px;
+      background: var(--white);
+    }
+
+    .sell-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .sell-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .sell-header h2 em { color: var(--gold); font-style: italic; }
+
+    .sell-header p { font-size: 14px; color: var(--muted); max-width: 340px; line-height: 1.7; }
+
+    .product-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s;
+      background: var(--white);
+    }
+
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(201,168,76,0.15); border-color: var(--gold); }
+
+    .product-card-img {
+      height: 240px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-card-img img {
+      transform: scale(1.07);
+    }
+
+    .product-card-body { padding: 24px; }
+
+    .product-card-body h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .product-card-body p { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+
+    .product-tag {
+      display: inline-block;
+      background: var(--gold-pale);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── WHY CHOOSE US ── */
+    #why-us {
+      background: var(--gold-pale);
+      padding: 100px 80px;
+    }
+
+    .why-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .why-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--dark);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .why-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--gold); }
+
+    .why-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: var(--dark);
+      margin: 0 auto 18px;
+    }
+
+    .why-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .why-card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+    /* ── TEAM ── */
+    #team {
+      padding: 100px 80px;
+      background: var(--dark);
+      text-align: center;
+    }
+
+    .team-header {
+      margin-bottom: 60px;
+    }
+
+    .team-header .eyebrow { color: var(--gold); }
+
+    .team-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--white);
+    }
+
+    .team-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .team-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 36px 30px;
+      width: 260px;
+      transition: all 0.3s;
+    }
+
+    .team-card:hover {
+      background: rgba(201,168,76,0.06);
+      border-color: rgba(201,168,76,0.3);
+      transform: translateY(-5px);
+    }
+
+    .team-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--dark-mid));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--white);
+      margin: 0 auto 18px;
+      border: 2px solid var(--border);
+    }
+
+    .team-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .team-role {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .team-card p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .team-links { display: flex; justify-content: center; gap: 10px; }
+
+    .team-links a {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .team-links a:hover { background: var(--gold); color: var(--dark); border-color: var(--gold); }
+
+    /* ── DELIVERY ── */
+    #delivery {
+      padding: 80px 80px;
+      background: var(--white);
+    }
+
+    .delivery-inner {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-mid) 100%);
+      border-radius: 24px;
+      padding: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .delivery-inner::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
+    }
+
+    .delivery-text { position: relative; z-index: 2; }
+
+    .delivery-text .eyebrow { color: var(--gold); }
+
+    .delivery-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--white);
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+
+    .delivery-text p { font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.8; }
+
+    .delivery-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .delivery-item {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.3s;
+    }
+
+    .delivery-item:hover { background: rgba(201,168,76,0.08); border-color: rgba(201,168,76,0.25); }
+
+    .delivery-item i { font-size: 18px; color: var(--gold); width: 24px; text-align: center; }
+
+    .delivery-item h5 { font-size: 14px; color: var(--white); font-weight: 600; }
+    .delivery-item p { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 2px; }
+
+    /* ── APP VIDEO ── */
+    #download-app {
+      text-align: center;
+      padding: 100px 80px;
+      background: var(--gold-pale);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .app-eyebrow { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); }
+
+    #download-app h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    #download-app h2 a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 2px solid var(--gold);
+      transition: 0.3s;
+    }
+
+    #download-app h2 a:hover { color: var(--mid); border-bottom-color: var(--mid); }
+
+    #download-app video {
+      width: min(400px, 80vw);
+      border-radius: 32px;
+      box-shadow: 0 30px 80px rgba(26,20,16,0.2);
+      border: 8px solid var(--white);
+      outline: 1px solid var(--border);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      padding: 70px 80px 40px;
+      border-top: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand p {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .footer-brand small {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.7;
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    .footer-socials { display: flex; gap: 10px; }
+
+    .footer-socials a {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .footer-socials a:hover { background: var(--gold); color: var(--dark); border-color: var(--gold); }
+
+    .footer-col h5 {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+
+    .footer-col a:hover { color: var(--white); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.25); }
+    .footer-bottom span { color: var(--gold); }
+
+    /* ── SCROLL ANIMATION ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      #page-head, #mission, #what-we-sell, #why-us, #team, #delivery, #download-app, footer { padding: 60px 40px; }
+      #page-head { grid-template-columns: 1fr; gap: 40px; }
+      .mission-grid, .product-cards { grid-template-columns: 1fr 1fr; }
+      .delivery-inner { grid-template-columns: 1fr; padding: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+    }
+
+    @media (max-width: 640px) {
+      #page-head, #mission, #what-we-sell, #why-us, #team, #delivery, #download-app, footer { padding: 50px 20px; }
+      .stats-row { padding: 0 20px; }
+      .stat-card { min-width: 130px; padding: 18px 14px; }
+      .mission-grid, .product-cards { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .img-badge { left: 10px; bottom: 14px; }
+      .sell-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
+
+<!-- ══ YOUR ORIGINAL HEAD / NAV — UNCHANGED ══ -->
 <section id="head">
-  <div class="logo-m"><img src="logo.png"alt=""></div>
-<div class="text">
+  <div class="logo-m"><img src="logo.png" alt=""></div>
+  <div class="text">
     <ul id="navbar">
       <li id="lg-bag"><a href="cart.html">
       <a href="#" id="close"><i class="fas fa-times"></i></a>
       <li><a href="index.html">Home</a></li>
-      <li><a  href="shop.html">Shop</a></li>
+      <li><a href="shop.html">Shop</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a class="active" href="about.html">About us</a></li>
       <li><a href="contact.html">Contact us</a></li>
       <i class="fa-solid fa-bag-shopping"></i></a></li>
     </ul>
   </div>
-
   <div id="mobile">
     <i id="bar" class="fas fa-outdent"></i>
   </div>
 </section>
-<section class="page-header">
-   <h2 style="font-size:45px">Shop stay</h2>
-<p> save more with copons & save 70%</p>
+<!-- ════════════════════════════════════════════ -->
+
+
+<!-- ══ HERO ══ -->
+<section class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">👕 Anowara, Chittagong · Est. 2025</div>
+    <h1 class="hero-title">Our <span>Story</span></h1>
+    <p class="hero-sub">Crafting Gen-Z fashion with golden quality</p>
+  </div>
 </section>
 
 
-<section id='page-head' class="section-p1">
-<img src='a6.jpg'></img>
-<div><h2>WHO YOU ARE?</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas aliquam expedita doloribus provident quis. Ipsum dicta libero quibusdam voluptatem molestiae pariatur ea, laudantium sequi quos praesentium in accusamus saepe vero optio doloremque. Voluptate, temporibus necessitatibus reiciendis debitis magnam, exercitationem, ipsa omnis vel assumenda quasi laudantium! Ex animi exercitationem magni. Repellat optio mollitia minima expedita quam. Natus corporis sequi accusantium voluptatibus eligendi, repellat perspiciatis odio dolorum blanditiis et doloribus explicabo! Natus repellat ab fugit necessitatibus aspernatur quos officiis perspiciatis blanditiis, harum sapiente dolorem voluptas quisquam unde sunt, cum commodi soluta laudantium dolor, porro numquam quod ipsa at non magni. Repellendus illum dolor commodi incidunt tempora laudantium, deserunt maiores ratione iure delectus eligendi iste nihil quae 
-  sit laboriosam corporis eaque vitae fugiat. Minima, molestias delectus!</p>
-<abbr title="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ipsum consequatur, eos dolore, quis repellendus aspernatur distinctio illum autem mollitia doloremque earum porro 
-  accusantium unde recusandae dolores iusto consequuntur dolor.</abbr>
-  <br>
-  <marquee behavior="" direction="" bgcolor="#ccc" loop="-1" scrollamount="5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut corporis reprehenderit error autem, nihil incidunt quibusdam repudiandae harum veniam exercitationem
-     vel nisi voluptas cum pariatur quasi deleniti porro suscipit atque.</marquee>
+<!-- ══ STATS ══ -->
+<div class="stats-row">
+  <div class="stat-card reveal">
+    <h3>100+</h3>
+    <p>Happy Customers</p>
+  </div>
+  <div class="stat-card reveal">
+    <h3>50+</h3>
+    <p>Products Available</p>
+  </div>
+  <div class="stat-card reveal">
+    <h3>2</h3>
+    <p>Months of Trust</p>
+  </div>
+  <div class="stat-card reveal">
+    <h3>4.9★</h3>
+    <p>Customer Rating</p>
+  </div>
 </div>
 
+
+<!-- ══ WHO WE ARE ══ -->
+<section id="page-head">
+  <div class="about-img-wrap reveal">
+    <img src="a6.jpg" alt="Golden Heart T-Shirts">
+    <div class="img-badge">
+      <h4>Golden Heart</h4>
+      <p>Anowara, Chittagong</p>
+    </div>
+  </div>
+
+  <div class="about-text reveal">
+    <span class="eyebrow">Who We Are</span>
+    <h2>The brand born for <em>Gen-Z</em> fashion</h2>
+    <p>Golden Heart is a young and passionate e-commerce brand based in Anowara, Chittagong. We started just 2 months ago with one clear goal — to bring the best quality t-shirts to the young generation of Bangladesh at affordable prices.</p>
+    <p>We believe fashion should be bold, authentic, and accessible. Every t-shirt we sell is hand-picked to match the vibe and style that Gen-Z truly loves.</p>
+
+    <div class="highlight-strip">
+      "Our mission is simple — sell the best t-shirts, deliver fast, and make every customer smile. We are Golden Heart and we are here to stay."
+    </div>
+
+    <a href="shop.html" class="about-cta">
+      <span>Shop Now</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
 </section>
+
+
+<!-- ══ MISSION / VISION / VALUES ══ -->
+<section id="mission">
+  <div class="mission-header reveal">
+    <span class="eyebrow">What Drives Us</span>
+    <h2>Mission, Vision & Values</h2>
+  </div>
+  <div class="mission-grid">
+    <div class="mission-card reveal">
+      <div class="mission-icon"><i class="fa-solid fa-bullseye"></i></div>
+      <h3>Our Mission</h3>
+      <p>To provide the best quality t-shirts that speak to the Gen-Z generation — stylish, comfortable, and fairly priced for everyone in Bangladesh.</p>
+    </div>
+    <div class="mission-card reveal">
+      <div class="mission-icon"><i class="fa-solid fa-eye"></i></div>
+      <h3>Our Vision</h3>
+      <p>To become the most trusted and loved fashion brand among young people in Chittagong and beyond, growing one happy customer at a time.</p>
+    </div>
+    <div class="mission-card reveal">
+      <div class="mission-icon"><i class="fa-solid fa-heart"></i></div>
+      <h3>Our Values</h3>
+      <p>Honesty, quality, and genuine care for every customer. We never compromise on what we sell, and we always stand behind our products.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ WHAT WE SELL ══ -->
+<section id="what-we-sell">
+  <div class="sell-header reveal">
+    <div>
+      <span class="eyebrow">Our Products</span>
+      <h2>Premium T-Shirts for <em>Every Style</em></h2>
+    </div>
+    <p>50+ carefully curated t-shirts designed to match the energy of Gen-Z. Fresh drops, bold designs, and unmatched comfort.</p>
+  </div>
+
+  <div class="product-cards">
+    <div class="product-card reveal">
+      <div class="product-card-img">
+        <img
+          src="https://i.pinimg.com/736x/2b/2e/6e/2b2e6e2b6e2b6e2b6e2b6e2b6e2b6e2b.jpg"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&q=80'"
+          alt="Oversized Tee">
+      </div>
+      <div class="product-card-body">
+        <h4>Oversized Tees</h4>
+        <p>Baggy, relaxed-fit t-shirts perfect for the streetwear look loved by Gen-Z. Available in multiple colors.</p>
+        <span class="product-tag">Best Seller</span>
+      </div>
+    </div>
+    <div class="product-card reveal">
+      <div class="product-card-img">
+        <img
+          src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?w=600&q=80"
+          alt="Graphic Print Tee">
+      </div>
+      <div class="product-card-body">
+        <h4>Graphic Prints</h4>
+        <p>Bold graphic t-shirts with unique artwork and designs that help you stand out from the crowd every day.</p>
+        <span class="product-tag">Trending</span>
+      </div>
+    </div>
+    <div class="product-card reveal">
+      <div class="product-card-img">
+        <img
+          src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80"
+          alt="Premium Basic Tee">
+      </div>
+      <div class="product-card-body">
+        <h4>Premium Basics</h4>
+        <p>High-quality plain t-shirts in essential colors — the foundation of any great wardrobe, made to last.</p>
+        <span class="product-tag">New Arrival</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ WHY CHOOSE US ══ -->
+<section id="why-us">
+  <div class="why-header reveal">
+    <span class="eyebrow">Why Golden Heart</span>
+    <h2>Reasons to choose us</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon"><i class="fa-solid fa-certificate"></i></div>
+      <h4>Best Quality</h4>
+      <p>Every t-shirt is quality-checked before shipping. We only sell what we would wear ourselves.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon"><i class="fa-solid fa-bolt"></i></div>
+      <h4>Fast Delivery</h4>
+      <p>Quick delivery within Anowara and all across Chittagong. Your order arrives fresh and on time.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+      <h4>Cash on Delivery</h4>
+      <p>Pay when your product arrives. No advance payment needed — we trust you, and you can trust us.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon"><i class="fa-solid fa-fire"></i></div>
+      <h4>Gen-Z Style</h4>
+      <p>Our collection is 100% curated for Gen-Z taste — trendy, fresh, and always ahead of the fashion curve.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
+      <h4>Real Support</h4>
+      <p>Talk to a real person on WhatsApp or Facebook. We reply fast and always keep our promises.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ TEAM ══ -->
+<section id="team">
+  <div class="team-header reveal">
+    <span class="eyebrow">The People Behind Golden Heart</span>
+    <h2 style="color:var(--white);">Meet Our Team</h2>
+  </div>
+  <div class="team-grid">
+    <div class="team-card reveal">
+      <div class="team-avatar">A</div>
+      <h4>MD Abrar</h4>
+      <span class="team-role">Manager & Founder</span>
+      <p>The visionary behind Golden Heart. Abrar started this brand with a passion for Gen-Z fashion and a dream to serve Chittagong.</p>
+      <div class="team-links">
+        <a href="https://wa.me/8801315134148" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/share/18ZJUD9kSS/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-avatar">R</div>
+      <h4>MD Arafat</h4>
+      <span class="team-role">Customer Support</span>
+      <p>Arafat is your go-to person for any question, problem, or feedback. He's always ready to help with a smile.</p>
+      <div class="team-links">
+        <a href="https://wa.me/8801315134148" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/share/18ZJUD9kSS/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ DELIVERY ══ -->
+<section id="delivery">
+  <div class="delivery-inner reveal">
+    <div class="delivery-text">
+      <span class="eyebrow">Delivery Info</span>
+      <h2>Fast & affordable delivery to your door</h2>
+      <p>We deliver across Bangladesh. Special low-cost delivery for our local Anowara customers. Cash on delivery available everywhere.</p>
+    </div>
+    <div class="delivery-cards">
+      <div class="delivery-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+          <h5>Anowara Delivery</h5>
+          <p>Only ৳30 delivery charge — fastest local service</p>
+        </div>
+      </div>
+      <div class="delivery-item">
+        <i class="fa-solid fa-truck"></i>
+        <div>
+          <h5>All Over Bangladesh</h5>
+          <p>Standard delivery charge applies · 3–5 business days</p>
+        </div>
+      </div>
+      <div class="delivery-item">
+        <i class="fa-solid fa-money-bill-wave"></i>
+        <div>
+          <h5>Cash on Delivery</h5>
+          <p>Pay only when your order arrives at your door</p>
+        </div>
+      </div>
+      <div class="delivery-item">
+        <i class="fa-brands fa-whatsapp"></i>
+        <div>
+          <h5>Order via WhatsApp</h5>
+          <p>Message us directly at 01315 134 148</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ APP VIDEO ══ -->
 <section id="download-app">
-  <h1>DOWNLOAD OUR <a href="#">APP</a></h1>
-  <video src="1.mp4" autoplay muted loop></video>
+  <span class="app-eyebrow reveal">📱 Coming Soon</span>
+  <h2 class="reveal">Download Our <a href="#">APP</a></h2>
+  <video src="1.mp4" autoplay muted loop playsinline></video>
 </section>
-<footer class="section-p1">
-  <div class="col">
-    <img src="" alt="">
-    <h4>contact us</h4>
-    <p><strong>Adresss:</strong>boirag</p>
-    <p><strong>Phone:</strong>013154393838</p>
-    <p><strong>facebook:</strong>md blabla</p>
-    <div class="social">
-      <i class="fab fa-facebook-f"></i>
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-youtube"></i>
+
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <p>Golden Heart</p>
+      <small>Your trusted Gen-Z fashion brand in Anowara, Chittagong. Best quality t-shirts, fast delivery, and real service — always.</small>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/share/18ZJUD9kSS/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/8801315134148" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Shop</h5>
+      <a href="shop.html">All Products</a>
+      <a href="#">New Arrivals</a>
+      <a href="#">Best Sellers</a>
+      <a href="#">Offers & Deals</a>
+    </div>
+    <div class="footer-col">
+      <h5>Info</h5>
+      <a href="about.html">About Us</a>
+      <a href="#">Delivery Info</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <a href="tel:+8801315134148">01315 134 148</a>
+      <a href="https://wa.me/8801315134148" target="_blank">WhatsApp</a>
+      <a href="https://www.facebook.com/share/18ZJUD9kSS/" target="_blank">Facebook Page</a>
+      <a href="contact.html">Contact Us</a>
     </div>
   </div>
-  <div class="col"><h4>about us</h4>
-    <a href="#">about us</a>
-    <a href="#">Delivery information</a>
-    <a href="#">privacy policy</a>
-    <a href="#">terms and condition </a>
-    <a href="#">contact us</a>
-  </div>
-  <div class="col"><h4>accout</h4>
-    <a href="#">about us</a>
-    <a href="#">Delivery information</a>
-    <a href="#">privacy policy</a>
-    <a href="#">terms and condition </a>
-    <a href="#">contact us</a>
-  </div>
-  <div class="col-install">
-    <h2>install app</h2>
-    <div class="row">
-      <img src="app.jpg" alt="">
-      <img src="play.jpg" alt="">
-      <h4>secure pament get way</h4>
-      <img src="pay.png" alt="">
-    </div>
+  <div class="footer-bottom">
+    <p>© 2025 <span>Golden Heart</span>. All rights reserved.</p>
+    <p>Made with <span>♥</span> in Anowara</p>
   </div>
 </footer>
- <script src="practice.js"></script>
+
+
+<script src="practice.js"></script>
+<script>
+  /* Scroll reveal */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
